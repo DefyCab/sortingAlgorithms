@@ -28,4 +28,20 @@ function merge(leftarr, rightarr) {
   return [...sortedArr, ...leftarr, ...rightarr]
 }
 
-console.log(mergeSort(array))
+const sortedArray = mergeSort(array)
+
+function addSortingToPage(arr) {
+
+  for (let i = 0; i < arr.length; i++) {
+    const ulItem = document.createElement("ul")
+    ulItem.textContent = `${arr[i]}`
+
+    const div = document.querySelector(".container")
+    div.appendChild(ulItem)
+  }
+
+  const container = document.querySelector(".container")
+  container.appendChild(divElement)
+}
+
+addSortingToPage(sortedArray)
