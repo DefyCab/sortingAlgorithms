@@ -24,15 +24,16 @@ function isPalindrome(str) {
 
 console.log(isPalindrome("abba"))
 
-// Problems: function inlcludes dot in word-length
 function findLongestWord(sentence) {
-  const words = sentence.split(" ")
+  let sentenceNoDots = sentence.replaceAll(".", " ")
+  const words = sentenceNoDots.split(" ")
   let longestWord = ""
   let counter = 0
 
   for (let word of words) {
     if (word.length > longestWord.length) {
       longestWord = word
+      console.log(longestWord)
     }
     counter++
   }
